@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    
+    {% load crispy_forms_tags %}
+    {% load static %}
+    
+    <link rel="stylesheet" href= "{%static 'main.css'%}">
+
+    <title>Details</title>
+    
+
+</head>
+
+<body>
+    <!-- Image and text -->
+
+        <nav class="navbar navbar-light " style="background-color: #0E6358;">
+            <a class="navbar-brand" style="color: white; href="#">
+                <img src="https://www.cowin.gov.in/assets/images/emblem-gov.svg " width="30" height="50"  class="d-inline-block align-middle">
+                &nbsp &nbsp Ministry of Railways and Human Welfare
+            </a>
+        </nav>
+
+    
+<div class="container-fluid my-0 px-0  " style="background-color: black;" width="100">
+    <h4 style="color:green;" class="py-0" >&nbsp &nbsp &nbsp{{n}}</h4>
+    <section class="Form">
+        <div class="container py-4 my-2">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="card">
+                        <div class="card body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="head text-center py-3">
+                                        <h3 style="color:#007bff;">Details</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if error %}
+                            <div class="form-row my-3 mx-3">
+                                <div class="col-lg-12">
+                            <div class="alert alert-danger" role="alert">
+                                {{error}}</div>
+
+                            </div>
+                            </div>
+                            {% endif %}
+
+                                <div class="form-row my-3 mx-3">
+                                <div class="col-md-6">
+                                <form method="post" action="http://127.0.0.1:8000/detail/">
+                                {% csrf_token %}   
+                                {% load static %}
+                                
+                                    <label><b>Id Proof : Aadhar Card</b></label>
+                                    
+                                   
+                                        <input required type="text" name="aadhar"  class="effect-1" placeholder="Aadhar Number">
+                                        <span class="Focus-border"></span>
+                                </div>
+                            
+                            
+                                    <div class="col-md-6 px-3">  
+                                      <label for="exampleFormControlFile1"><b>Upload Aadhar card</b></label>
+                                      <input required type="file" name="img" class="form-control-file" id="exampleFormControlFile1">
+                                    </div>
+                                  
+                                </div>
+                            <div class="form-row my-3 mx-3">
+                                <div class="col-lg-12">
+                                    <label><b>Name </b></label>
+
+                                        <input required type="text" name="name" class="form-control effect-1" placeholder="Name(as in Aadhar Card)" value="" required="">
+
+                                </div>
+                            </div>
+
+                            <div class="form-row my-3 mx-3">
+                                <div class="col-lg-12">
+                                <label for="exampleInputEmail1"><b>Enter Email</b></label>
+                                <input required type="email" name="email" class="form-control effect-1" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email id">
+                                </div>
+                            </div>
+
+                            <div class="form-row my-3 mx-3">
+                                <div class="col-lg-12">
+                                    <label><b> Mobile Number</b></label>
+                                    
+                                    <input required type="text" name="mobile" class="form-control effect-1" id="validationDefault01" placeholder="Enter mobile number" value="" required="">
+
+                                </div>
+                            </div>
+
+                            <div class="form-row my-3 mx-3">
+                                <div class="col-lg-12">
+                                    <label><b>Gender</b></label><br>
+                                    <input required type="radio" name="gender" value="male"> Male &nbsp;&nbsp<input type="radio" name="gender" value="female"> Female &nbsp;&nbsp<input type="radio" name="gender" value="others"> Others
+                                    <span class="Focus-border"></span>
+                                </div>
+                            </div>
+                            <div class="form-row my-3 mx-3">
+                                <div class="col-lg-12">
+                                    <label><b>Enter DOB</b></label><br>
+                                    <input required type="text" name="date" class="form-control effect-1" id="validationDefault01" placeholder="Year of Birth(as in Aadhar Card in yyyy/mm/dd format)" value="" required>
+                                    <span class="Focus-border"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-check">
+                                <div class="form-group form-row my-3 mx-4">
+
+                                    <input class="form-check-input" type="checkbox"  value="" id="invalidCheck2" required>
+                                    <label class="form-check-label" for="invalidCheck2">Agree to terms and condition</label>
+                                </div>
+                            </div>
+
+                             <!--<form class="form-inline">-->
+                            <div class="form-group form-row my-3 px-5">
+                            <button class="btn btn-primary btn-lg btn-block" data-toggle="button" aria-pressed="false" autocomplete="off" style="text-align:center" type="submit">Submit</button>
+                            
+                             <span class="Focus-border"></span>
+                            </div>
+                            </div>
+                            </form>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</div>
+    
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js " integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns " crossorigin="anonymous "></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js " integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF " crossorigin="anonymous "></script>
+    -->
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    {% load crispy_forms_tags %}
+    {% load static %}
+    <link rel="stylesheet" href= "{%static 'register.css'%}">
+    
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-light " style="background-color: #0E6358;">
+    <a class="navbar-brand" style="color: white; href="#">
+        <img src="https://www.cowin.gov.in/assets/images/emblem-gov.svg " width="30" height="50"  class="d-inline-block align-middle">
+        &nbsp &nbsp Ministry of Railways and Human Welfare
+    </a>
+    
+</nav>
+
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container" align="center" style="margin-top: 70px;">
+    <h2>You have been Logged out</h2>
+    <h4><a href="{% url 'login' %}">Login In Again</a></h4>
+</div>
+        
+{% endblock %}</title>
+
+</body>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    {% load crispy_forms_tags %}
+    {% load static %}
+    <link rel="stylesheet" href= "{%static 'main.css'%}">
+
+    <title>Register</title>
+    
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light " style="background-color:#0E6358;">
+        <a class="navbar-brand" style="color: white; href="#">
+            <img src="https://www.cowin.gov.in/assets/images/emblem-gov.svg " width="30" height="50"  class="d-inline-block align-middle">
+            &nbsp &nbsp Ministry of Railways and Human Welfare
+        </a>
+    </nav>
+
+    {% load crispy_forms_tags %}
+    {% load static %}
+    {% csrf_token %}
+    {% block content %}
+    
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+    <div class="container" style="margin-top: 30px;">
+    <form action="" method="POST">
+        {% csrf_token %}
+      <fieldset class="form-group">
+          <legend class="border-bottom text-center mb-4" style="color: Blue;">Register</legend>
+          {{ form|crispy }}
+      </fieldset>
+      <div class="form-group" id="signup-button">
+          <button class="btn " style="color: Blue;">Sign Up</button>
+      </div>
+      <div class="form-group">
+          <small class="text-muted ml-3" >Already have an account? <a href="{% url 'login' %}">Sign In</a></small>
+      </div>
+    </form>
+    </div>
+    {% endblock %}
+
+
+
+
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js " integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns " crossorigin="anonymous "></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js " integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF " crossorigin="anonymous "></script>
+    -->
+</body>
+
+</html>
